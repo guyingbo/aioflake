@@ -9,7 +9,7 @@ Unique id generator inspired by twitter's snowflake.
 
 ## Usage
 
-~~~
+```python
 import asyncio
 import aioflake
 
@@ -23,4 +23,4 @@ async def go():
 loop = asyncio.get_event_loop()
 loop.run_until_complete(go())
 loop.close()
-~~~
+```
