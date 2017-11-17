@@ -8,7 +8,7 @@ def test_flake():
 
     async def go():
         last_id = 0
-        for i in range(1_000_000):
+        for i in range(1000000):
             ident = await flake.next()
             assert ident > last_id
             last_id = ident
