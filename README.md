@@ -5,4 +5,22 @@
 [![PyPI](https://img.shields.io/pypi/format/aioflake.svg)](https://pypi.python.org/pypi/aioflake)
 [![PyPI](https://img.shields.io/pypi/l/aioflake.svg)](https://pypi.python.org/pypi/aioflake)
 
-An id generator inspired by twitter snowflake.
+Unique id generator inspired by twitter's snowflake.
+
+## Usage
+
+~~~
+import asyncio
+import aioflake
+
+
+async def go():
+    flake = aioflake.Flake()
+    ident = await flake.next()
+    print(ident)
+
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(go())
+loop.close()
+~~~
