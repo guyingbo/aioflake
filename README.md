@@ -18,6 +18,8 @@ async def go():
     flake = aioflake.Flake()
     ident = await flake.next()
     print(ident)
+    idstr = aiflake.urlsafe(ident)
+    print(idstr)
 
 
 loop = asyncio.get_event_loop()
