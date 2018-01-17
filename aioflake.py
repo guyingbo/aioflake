@@ -4,7 +4,7 @@ import uuid
 import base64
 import asyncio
 # Tue, 21 Mar 2006 20:50:14.000 GMT
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 twepoch = 1142974214000
 total_bits = 128
 timestamp_bits = 41
