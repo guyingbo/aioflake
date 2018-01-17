@@ -12,6 +12,7 @@ def test_flake():
             ident = await flake.next()
             assert ident > last_id
             last_id = ident
-            aioflake.hex(ident)
+            assert len(aioflake.hex(ident)) == 32
+            assert len(aioflake.urlsafe(ident)) == 24
             aioflake.ctime(ident)
     loop.run_until_complete(go())

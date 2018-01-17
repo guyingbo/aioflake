@@ -1,6 +1,7 @@
 import os
 import time
 import uuid
+import base64
 import asyncio
 # Tue, 21 Mar 2006 20:50:14.000 GMT
 __version__ = '0.1.0'
@@ -48,6 +49,11 @@ class Flake:
 def hex(ident: int):
     assert ident > 0, 'must > 0'
     return ident.to_bytes(16, 'big').hex()
+
+
+def urlsafe(ident: int):
+    assert ident > 0, 'must > 0'
+    return base64.urlsafe_b64encode(ident.to_bytes(16, 'big'))
 
 
 def timestamp(ident: int):
