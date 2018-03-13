@@ -4,7 +4,7 @@ import uuid
 import base64
 import asyncio
 # Tue, 21 Mar 2006 20:50:14.000 GMT
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 twepoch = 1142974214000
 total_bits = 128
 timestamp_bits = 41
@@ -44,6 +44,12 @@ class Flake:
         else:
             await asyncio.sleep((self.last_timestamp-timestamp)/1000)
             return await self.next()
+
+    async def next_urlsafe(self):
+        return urlsafe(await self.next())
+
+    async def next_hex(self):
+        return hex(await self.next())
 
 
 def hex(ident: int):

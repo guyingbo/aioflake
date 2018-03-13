@@ -15,4 +15,6 @@ def test_flake():
             assert len(aioflake.hex(ident)) == 32
             assert len(aioflake.urlsafe(ident)) == 24
             aioflake.ctime(ident)
+            assert len(await flake.next_hex()) == 32
+            assert len(await flake.next_urlsafe()) == 24
     loop.run_until_complete(go())
